@@ -1,0 +1,357 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.logo {
+  margin: 0;
+  font-size: 24px;
+}
+
+.nav-btn {
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: white;
+  color: #333;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px 0;
+}
+
+/* Login Page */
+.login-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 400px;
+  margin: 80px auto;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Habits Page */
+.habits-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.add-habit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.add-habit-btn:hover {
+  background-color: #45a049;
+}
+
+/* Habit Form */
+.habit-form-container {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.habit-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.habit-form input,
+.habit-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.save-btn {
+  background-color: #008CBA;
+  color: white;
+  margin-right: 10px;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Habit Item */
+.habit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.habit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.habit-item:hover {
+  background-color: #f1f1f1;
+}
+
+.habit-actions button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Dashboard & Calendar */
+.dashboard-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-nav button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.calendar-nav .week-label {
+  margin: 0;
+  font-size: 18px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-day strong {
+  font-size: 1.2em;
+}
+
+.calendar-day.selected {
+  background-color: #e6f7ff;
+  border-color: #1890ff;
+}
+
+.calendar-day.today {
+  background-color: #fffbe6;
+  border-color: #ffc400;
+}
+
+/* Daily Habits List */
+.daily-habits {
+  margin-top: 20px;
+}
+
+.habit-list-daily {
+  list-style: none;
+  padding: 0;
+}
+
+.daily-habit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 5px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.daily-habit-item.complete {
+  background-color: #e6ffe6;
+  border-left-color: #4CAF50;
+}
+
+.habit-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.habit-name {
+  font-weight: bold;
+}
+
+.habit-time {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.habit-action {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.complete-btn {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.complete-btn.undo {
+  background-color: #f44336;
+}
+
+/* Streak Badge */
+.streak-badge {
+  display: flex;
+  gap: 10px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+.current-streak,
+.longest-streak {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.current-streak {
+  background-color: #ffe0b2;
+}
+
+.longest-streak {
+  background-color: #c8e6c9;
+}
