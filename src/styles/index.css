@@ -1,0 +1,440 @@
+/* --- Base Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #007BFF; /* Blue */
+    --background-color: #f0f2f5; /* Light Gray Background */
+    --card-background: #ffffff;
+    --text-color: #333;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --radius: 8px;
+    --alert-success: #45a049;
+    --alert-error: #dc3545;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Navigation Bar (Navbar) Fixes --- */
+.navbar {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--primary-color);
+    margin-right: 30px; 
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+nav a {
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
+nav .active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.logout-button {
+    background-color: var(--alert-error);
+    color: white;
+    padding: 8px 15px;
+    margin-left: 15px; 
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+}
+.logout-button:hover {
+    background-color: #c82333;
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.page-content {
+    width: 100%;
+    max-width: 1000px; 
+    padding: 30px;
+    background: var(--card-background);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-top: 20px;
+    position: relative;
+    min-height: 400px;
+}
+
+/* --- Alert Styling --- */
+.alert {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    color: white;
+    font-weight: 600;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+    text-align: center;
+}
+
+/* --- Forms (Auth and Habit) --- */
+.auth-container, .form-container {
+    padding: 30px;
+    max-width: 400px;
+    margin: 50px auto;
+    background: var(--card-background);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+button:disabled {
+    background-color: #a5d6a7;
+    cursor: not-allowed;
+}
+
+.secondary-button {
+    background-color: #ccc;
+    color: var(--text-color);
+}
+.secondary-button:hover:not(:disabled) {
+    background-color: #bbb;
+}
+
+.link {
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- Dashboard Styling --- */
+.dashboard-page h2 {
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.time-slot-card {
+    background: #f1f8e9; 
+    padding: 20px;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary-color);
+}
+.time-slot-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.habit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.habit-name {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.completion-toggle {
+    width: 120px;
+    padding: 8px;
+    margin-right: 20px;
+    background-color: #ff9800; /* Orange for mark done */
+    border-radius: var(--radius);
+}
+
+.completion-toggle.completed {
+    background-color: var(--primary-color);
+}
+
+/* --- Streak Badge Styling --- */
+.streak-badge {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    min-width: 150px;
+}
+.current-streak, .longest-streak {
+    background-color: #e0f2f1;
+    padding: 5px 8px;
+    border-radius: 4px;
+    color: #00796b;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.badge-label {
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: #607d8b;
+}
+
+/* --- Habit Management Page --- */
+.habit-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.delete-button {
+    padding: 8px 12px;
+    width: auto;
+}
+
+/* --- Calendar Styling FIX --- */
+.calendar-page h2 {
+    font-size: 1.8rem;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+}
+.calendar-header button {
+    background: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    width: 150px;
+    border-radius: 20px; /* Pill shape */
+}
+
+.calendar-grid {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #fff;
+}
+
+.calendar-row {
+    /* Use Grid Layout: Habit Name (fixed width) + 7 days (equal width) */
+    display: grid;
+    grid-template-columns: 180px repeat(7, 1fr);
+    border-bottom: 1px solid #eee;
+}
+
+.header-row {
+    background-color: #e0f0e0; /* Light Green Header */
+    font-weight: 700;
+    text-align: center;
+}
+
+.day-col {
+    padding: 10px 5px;
+    border-left: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px; /* Ensure a minimum height for cells */
+}
+
+.habit-name-col {
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: 600;
+    background-color: #fafafa;
+    border-right: 1px solid #ddd;
+    align-items: center;
+    display: flex;
+}
+
+.day-name { font-size: 0.9rem; color: #555; }
+.day-date { 
+    font-size: 1.1rem; 
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.day-col.today-col {
+    background-color: #c8e6c9; /* Highlight today */
+}
+
+.completion-cell {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.1s;
+    color: #999;
+}
+
+.completion-cell:hover:not(.completed) {
+    background-color: #f0f0f0;
+}
+
+.completion-cell.completed {
+    background-color: #4CAF50; /* Primary Green for completed */
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.completion-cell.completed:hover {
+    background-color: #45a049;
+}
+
+/* --- Responsive Design (Mobile First) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav {
+        width: 100%;
+        justify-content: space-around;
+    }
+    nav button {
+        padding: 8px 5px;
+        font-size: 0.8rem;
+    }
+    .logout-button {
+        margin-left: 0;
+    }
+    
+    .page-content {
+        padding: 15px;
+    }
+    
+    /* Calendar responsiveness */
+    .calendar-grid {
+        font-size: 0.9rem;
+    }
+    .calendar-row {
+        grid-template-columns: 100px repeat(7, 1fr); /* Narrower habit name col */
+    }
+    .habit-name-col {
+        padding: 8px 5px;
+    }
+    .day-col {
+        padding: 5px 2px;
+    }
+    .calendar-header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .calendar-header h2 {
+        flex-basis: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .calendar-header button {
+        width: 45%;
+        font-size: 0.8rem;
+    }
+    
+    .streak-badge {
+        flex-direction: column;
+        gap: 5px;
+        min-width: 80px;
+    }
+}
